@@ -1,10 +1,12 @@
 * {
   font-family: 'Montserrat', sans-serif;
-  background-color: #000000;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  
+  box-sizing: border-box; 
+}
+
+body {
+  background: #000;
 }
 
 /*NAV*/
@@ -12,6 +14,7 @@
 .caixa-nav {
   display: flex;
 }
+
 
 .img-logo {
   width: 80px;
@@ -34,18 +37,30 @@ nav {
   margin: 60px 20px 20px 20px;
   position: inline;
   text-decoration: none;
-  
+  transition: 0.3s;
+
+}
+
+.link-nav:hover {
+  color: #fff;
 }
 
 .btn-nav {
   width: 130px;
   height: 42px;
   background: #ff7200;
-  color: #fff;
+  color: #000;
   border-radius: 20.5px;
   border: none;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-nav:hover {
+  transform: scale(1.10);
+
 }
 
 /*HEADER*/
@@ -60,18 +75,19 @@ header {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
 }
 
 .caixa-header {
 
-
-
+  margin-right: 40px;
+  margin-bottom: 40px;
 
   h2 {
     font-weight: 600;
     font-size: 40px;
   }
+
   h1 {
     font-weight: 900;
     font-size: 100px;
@@ -85,11 +101,140 @@ header {
   .btn-cardapio {
     width: 130px;
     height: 40px;
-    border-radius: 8px;
+    border-radius: 25px;
     border: none;
     background: #ff7200;
-    color: #fff;
+    color: #000000;
     font-weight: 700;
     font-size: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s;
   }
+
+  .btn-cardapio:hover {
+    transform: scale(1.10);
+  }
+}
+
+.linha {
+  border: 2px solid #F06000;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*SEÇÕES*/
+
+.caixa-basein {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+  
+}
+
+.caixa-info {
+  width: 600px;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.caixa-info:hover {
+   transform: scale(1.03);
+}
+
+#cardapio {
+  background-image: url(assets/sushi_home_cardapio.png);
+
+}
+
+#promocoes {
+  background-image: url(assets/sushi_home_promocoes.png);
+
+}
+
+#contato {
+  background-image: url(assets/sushi_home_contato.png);
+
+}
+
+/*FOOTER*/
+
+footer {
+    background: #000000;
+    color: #ffffff;
+    padding: 60px 8% 25px;
+    border-top: 4px solid #F06000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-logo {
+    text-align: center;
+}
+
+.footer-logo img {
+  width: 130px;
+  border-radius: 8px;
+  
+}
+
+.footer-logo p {
+    color: #98909c;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 35px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #F06000;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-contact a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: #F06000;
+}
+
+.footer-bottom {
+    border-top: 1px solid #301000;
+    margin-top: 45px;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #98909c;
+    font-size: 13px;
 }
