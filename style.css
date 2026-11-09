@@ -1,73 +1,112 @@
+
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
+:root {
+    --cor-fundo: #080808;
+    --cor-laranja: #ff7200;
+    --cor-laranja-claro: #f06000;
+    --cor-texto: #ffffff;
+    --fonte-principal: 'Montserrat', sans-serif;
+}
+
 * {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fonte-principal);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
 body {
-  background: #000;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    overflow-x: hidden;
 }
 
-/*NAV*/
+a {
+    text-decoration: none;
+}
+
+
+/* =================================
+   NAVEGAÇÃO
+================================= */
 
 .caixa-nav {
-  display: flex;
+    width: 100%;
+    min-height: 100px;
+    padding: 10px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
 }
-
-.menu-mobile {
-  display: none;
-}
-
 
 .img-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 20px 20px 20px 20px;
-  position: inline;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-nav {
-  margin-top: 35px;
+.caixa-nav nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
 }
 
 .link-nav {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  color: #ff7200;
-  cursor: pointer;
-  margin: 60px 20px 20px 20px;
-  position: inline;
-  text-decoration: none;
-  transition: 0.3s;
-
+    color: var(--cor-laranja);
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 .link-nav:hover {
-  color: #fff;
+    color: var(--cor-texto);
 }
 
 .btn-nav {
-  width: 130px;
-  height: 42px;
-  background: #ff7200;
-  color: #000;
-  border-radius: 20.5px;
-  border: none;
-  font-weight: 600;
-  font-size: 24px;
-  cursor: pointer;
-  transition: 0.3s;
+    min-width: 120px;
+    padding: 12px 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cor-laranja);
+    color: #000;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
 .btn-nav:hover {
-  transform: scale(1.10);
-
+    background: var(--cor-texto);
+    transform: translateY(-3px);
 }
 
-/*HEADER*/
+/* Botão hamburguer */
+
+.menu-mobile {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--cor-laranja);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* =================================
+   HEADER / BANNER PRINCIPAL
+================================= */
 
 header {
     position: relative;
@@ -81,110 +120,140 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: end;
+}
 
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.85),
+        rgba(0, 0, 0, 0.05)
+    );
 }
 
 .caixa-header {
-
   margin-right: 40px;
   margin-bottom: 40px;
 
-  h2 {
-    font-weight: 600;
-    font-size: 40px;
-  }
-
-  h1 {
-    font-weight: 900;
-    font-size: 100px;
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 20px;
-  }
-
-  .btn-cardapio {
-    width: 130px;
-    height: 40px;
-    border-radius: 25px;
-    border: none;
-    background: #ff7200;
-    color: #000000;
-    font-weight: 700;
-    font-size: 15px;
-    margin-top: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .btn-cardapio:hover {
-    transform: scale(1.10);
-  }
 }
+
+.conteudo-header {
+  margin-right: 60px;
+  margin-bottom: 40px;
+}
+
+.caixa-header h2 {
+    font-size: clamp(24px, 3vw, 40px);
+    font-weight: 600;
+}
+
+.caixa-header h1 {
+    font-size: clamp(48px, 8vw, 100px);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.caixa-header p {
+    color: var(--cor-texto);
+    font-size: clamp(14px, 2vw, 20px);
+    margin-top: 12px;
+}
+
+.btn-cardapio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 30px;
+    background: var(--cor-laranja);
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cardapio:hover {
+    background: var(--cor-texto);
+    transform: translateY(-3px);
+}
+
+
+/* =================================
+   DIVISOR
+================================= */
 
 .linha {
-  border: 2px solid #F06000;
-  margin-top: 50px;
-  margin-bottom: 50px;
+    width: 85%;
+    height: 2px;
+    margin: 60px auto;
+    background: var(--cor-laranja-claro);
+    border: none;
+    opacity: 0.8;
 }
 
-/*SEÇÕES*/
+
+/* =================================
+   SEÇÕES / CARDS
+================================= */
 
 .caixa-basein {
-  width: 90vw;
-  height: 90vh;
-  display: flex;
-  gap: 20px;
-  margin-left: 60px;
-  
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
 }
 
 .caixa-info {
-  width: 600px;
-  height: 700px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: 0.4s;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .caixa-info:hover {
-   transform: scale(1.03);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 114, 0, 0.18);
 }
 
 #cardapio {
-  background-image: url(assets/sushi_home_cardapio.png);
-
+    background-image: url("assets/img.cardapio.png");
 }
 
 #promocoes {
-  background-image: url(assets/sushi_home_promocoes.png);
-
+    background-image: url("assets/img.promocao.png");
 }
 
 #contato {
-  background-image: url(assets/sushi_home_contato.png);
-
+    background-image: url("assets/img.contato.png");
 }
 
-/*FOOTER*/
+
+/* =================================
+   FOOTER
+================================= */
 
 footer {
-    background: #000000;
-    color: #F06000;
-    padding: 60px 8% 25px;
-    border-top: 4px solid #F06000;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 80px;
+    margin-top: 100px;
+    padding: 55px 8% 25px;
+    background: #050505;
+    border-top: 2px solid var(--cor-laranja-claro);
+    color: var(--cor-laranja);
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 40px;
 }
 
@@ -193,59 +262,212 @@ footer {
 }
 
 .footer-logo img {
-  width: 130px;
-  border-radius: 8px;
-  
+    width: 110px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .footer-logo p {
-    color: #ff7200;
-    font-size: 14px;
-    margin-top: 15px;
+    margin-top: 12px;
+    color: var(--cor-laranja);
+    font-size: 13px;
 }
 
 .footer-links {
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
-.footer-links a {
-    color: #F06000;
-    text-decoration: none;
+.footer-links a,
+.footer-contact a {
+    color: var(--cor-laranja);
+    font-size: 14px;
     font-weight: 600;
-    transition: 0.3s;
+    transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: #fff;
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--cor-texto);
 }
 
 .footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-}
-
-.footer-contact a {
-    color: #F06000;
-    text-decoration: none;
-}
-
-.footer-contact a:hover {
-    color: #fff;
+    gap: 15px;
 }
 
 .footer-bottom {
-    border-top: 1px solid #301000;
-    margin-top: 45px;
-    padding-top: 20px;
-
     display: flex;
     justify-content: space-between;
-
-    color: #ff7200;
-    font-size: 13px;
+    gap: 15px;
+    margin-top: 45px;
+    padding-top: 20px;
+    border-top: 1px solid #301000;
+    color: var(--cor-laranja);
+    font-size: 12px;
 }
+
+
+/* =================================
+   RESPONSIVIDADE - TABLETS
+================================= */
+
+@media (max-width: 900px) {
+
+    .caixa-nav {
+        padding: 10px 4%;
+    }
+
+    .caixa-nav nav {
+        gap: 20px;
+    }
+
+    .link-nav {
+        font-size: 15px;
+    }
+
+    .caixa-basein {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+}
+
+
+/* =================================
+   RESPONSIVIDADE - CELULARES
+================================= */
+
+@media (max-width: 600px) {
+
+    /* Navegação */
+
+    .caixa-nav {
+        min-height: 85px;
+        padding: 10px 5%;
+    }
+
+    .img-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .caixa-nav nav {
+        display: none;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #080808;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        border-top: 1px solid var(--cor-laranja);
+    }
+
+    .caixa-nav nav.ativo {
+        display: flex;
+    }
+
+    .link-nav {
+        font-size: 17px;
+    }
+
+    /* Banner */
+
+    header {
+        min-height: 70vh;
+        padding: 35px 6%;
+        background-position: center;
+    }
+
+    .caixa-header h1 {
+        font-size: clamp(42px, 12vw, 65px);
+    }
+
+    .caixa-header h2 {
+        font-size: 25px;
+    }
+
+    .caixa-header p {
+        font-size: 14px;
+    }
+
+    /* Divisor */
+
+    .linha {
+        width: 80%;
+        margin: 40px auto;
+    }
+
+    /* Cards */
+
+    .caixa-basein {
+        width: 88%;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .caixa-info {
+        aspect-ratio: 4 / 5;
+    }
+
+    /* Footer */
+
+    footer {
+        margin-top: 65px;
+        padding: 40px 7% 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .footer-contact {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        margin-top: 30px;
+    }
+}
+
+
+/* =================================
+   ACESSIBILIDADE
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
 
 /*RESPONSIVIDADE*/
 

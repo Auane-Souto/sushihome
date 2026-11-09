@@ -10,67 +10,113 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
 </head>
+
 <body>
-
+    <!-- Navegação principal -->
     <div class="caixa-nav">
-    <img src="assets/logo.sushi.png" alt="Logo sushi home" class="img-logo">
-    <nav>
-        <a href="#inicio" class="link-nav">Inicio</a>
-        <a href="#cardapio" class="link-nav">Cardapio</a>
-        <a href="#promocoes" class="link-nav">Promoções</a>
-        <a href="#contato" class="link-nav">Contato</a>
-        <button class="btn-nav">Pedir</button>
-    </nav>
-    </div>
+        <a href="#inicio" aria-label="Sushi Home - Página inicial">
+            <img 
+                src="assets/logo.sushi.png" 
+                alt="Logo Sushi Home" 
+                class="img-logo"
+            >
+        </a>
 
-    <header>
-        <div class="caixa-header">
-            <div class="mascara"></div>
-        <h2>Bem-vindo ao</h2>
-        <h1>SUSHI HOME</h1>
-        <p>O melhor da culinaria japonesa ate voçe!</p>
-        <button class="btn-cardapio">Ver Cardapio</button>
-        </div>
-    </header>
+        <button class="menu-mobile" aria-label="Abrir menu" aria-expanded="false">
+         ☰
+        </button>
 
-    <div class="linha"></div>
+        <nav class="nav-links" aria-label="Navegação principal">
+            <a href="#inicio" class="link-nav">Início</a>
+            <a href="#cardapio" class="link-nav">Cardápio</a>
+            <a href="#promocoes" class="link-nav">Promoções</a>
+            <a href="#contato" class="link-nav">Contato</a>
 
-    <section class="caixa-basein"> 
-        <div class="caixa-info" id="cardapio"></div>
-        <div class="caixa-info" id="promocoes"></div>
-        <div class="caixa-info" id="contato"></div>
-    </section>
-
-<footer>
-
-    <div class="footer-content">
-        <div class="footer-logo">
-            <img src="assets/logo.sushi.png" alt="Sushi Home">
-            <p>
-                Seu sushi, do nosso lar para o seu.
-            </p>
-        </div>
-
-        <nav class="footer-links">
-            <a href="#">Cardápio</a>
-            <a href="#">Promoções</a>
-            <a href="#">Contato</a>
+            <a href="#contato" class="btn-nav">Pedir agora</a>
         </nav>
+    </div>
 
-        <div class="footer-contact">
-            <a href="#"> 📱 @sushihome_2</a>
-            <a href="#"> 📞 (83) 981287773</a>
+    <main>
+        <!-- Seção inicial -->
+        <header class="caixa-header" id="inicio">
+
+            <div class="conteudo-header">
+                <h2>Bem-vindo ao</h2>
+                <h1>SUSHI HOME</h1>
+
+                <p>
+                    O melhor da culinária japonesa até você!
+                </p>
+
+                <a href="#cardapio" class="btn-cardapio">
+                    Ver cardápio
+                </a>
+            </div>
+        </header>
+
+        <!-- Separador visual -->
+        <div class="linha" aria-hidden="true"></div>
+
+        <!-- Seções principais -->
+        <section class="caixa-basein" aria-label="Conheça a Sushi Home">
+
+            <section class="caixa-info" id="cardapio">
+               
+            </section>
+
+            <section class="caixa-info" id="promocoes">
+               
+            </section>
+
+            <section class="caixa-info" id="contato">
+               
+            </section>
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                <a href="#inicio" aria-label="Voltar ao início">
+                    <img 
+                        src="assets/logo.sushi.png" 
+                        alt="Sushi Home"
+                    >
+                </a>
+
+                <p>
+                    Seu sushi, do nosso lar para o seu.
+                </p>
+            </div>
+
+            <nav class="footer-links" aria-label="Links do rodapé">
+                <a href="#cardapio">Cardápio</a>
+                <a href="#promocoes">Promoções</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <div class="footer-contact">
+                <a href="https://www.instagram.com/sushihome_2/">
+                    📱 @sushihome_2
+                </a>
+
+                <a href="tel:+5583981287773">
+                    📞 (83) 98128-7773
+                </a>
+            </div>
+
         </div>
 
-    </div>
+        <div class="footer-bottom">
+            <span>© 2026 Sushi Home. Todos os direitos reservados.</span>
+            <span>Feito com 🧡 para você</span>
+        </div>
+    </footer>
 
-    <div class="footer-bottom">
-        <span>© 2026 Sushi Home</span>
-        <span>Feito com 🧡 para você</span>
-    </div>
-
-</footer>
-
-<script src="scripts.js"></script>
+    <script src="scripts.js" defer></script>
 </body>
+
 </html>
